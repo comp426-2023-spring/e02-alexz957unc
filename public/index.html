@@ -1,12 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title>Rock</title>
+        <meta charset="UTF-8">
+        <title>RPS(LS)</title>
         <!-- Link to your script file(s) and CSS in here somewhere -->
+        <link rel="stylesheet" type="text/css" href="./styles.css">
+        <script src="./scripts.js"></script>
     </head>
-    <body>
-
+    <body id="body" onload="setLS()">
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
+        <h1 id="gameTitle">Rock Paper Scissors Lizard Spock</h1>
+        <div>
+            <button class="button" type="button" onclick="helpRPS()">RPS Rules</button>
+            <button class="button" type="button" onclick="helpRPSLS()">RPSLS Rules</button>
+        </div>
+        <div>
+            <h2>Random Draw</h2>
+            <label>Select game: </label>
+            <input type="radio" name="noOpponentGame" value="RPS" checked>RPS
+            <input type="radio" name="noOpponentGame" value="RPSLS">RPSLS
+            <br><br>
+            <button class="button" type="button" onclick="getShot()">Get shot</button>
+            <br><br>
+            <input type="text" id="draw" name="draw" value="" readonly>
+        </div>
+        <div>
+            <h2>Play Computer</h2>
+            <label>Select game: </label>
+            <input type="radio" name="game" value="RPS" onchange="setLS()" checked>RPS
+            <input type="radio" name="game" value="RPSLS" onchange="setLS()">RPSLS
 
+            <br><br>
+
+            <label>Select Shot:</label>
+            <input type="radio" id="rockOption" name="selectedShot" value="rock" checked>
+            <label for="rockOption">Rock</label>
+            <input type="radio" id="paperOption" name="selectedShot" value="paper">
+            <label for="paperOption">Paper</label>
+            <input type="radio" id="scissorsOption" name="selectedShot" value="scissors">
+            <label for="scissorsOption">Scissors</label>
+            <input type="radio" id="lizardOption" name="selectedShot" value="lizard">
+            <label for="lizardOption">Lizard</label>
+            <input type="radio" id="spockOption" name="selectedShot" value="spock">
+            <label for="spockOption">Spock</label>
+
+            <br>
+            <h4>Result: </h4>
+            <input type="text" id="gameResult" name="gameResult" value="" readonly>
+            <br>
+            <h4>Your shot: </h4>
+            <input type="text" id="playerShot" name="playerShot" value="" readonly>
+            <br>
+            <h4>Computer's Shot: </h4>
+            <input type="text" id="computerShot" name="computerShot" value="" readonly>
+
+            <br><br>
+            <button class="button" type="button" onclick="play()">GO!</button>
+            <br><br>
+        </div>
+        <button class="button" type="button" onclick="reset()">Reset</button>
     </body>
 </html>

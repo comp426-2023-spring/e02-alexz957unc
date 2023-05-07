@@ -27,8 +27,8 @@ function helpRPSLS() {
     alert(rpsls_rules_text);
 }
 
-function rpsOpponent(move) {
-    const url = "/app/rps/play/" + move
+function rpsOpponent(shot) {
+    const url = "/app/rps/play/" + shot
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -37,8 +37,8 @@ function rpsOpponent(move) {
         .catch(error => console.error(error));
 }
 
-function rpslsOpponent(move) {
-    const url = "/app/rpsls/play/" + move
+function rpslsOpponent(shot) {
+    const url = "/app/rpsls/play/" + shot
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -67,7 +67,7 @@ function rpslsNoOpponent() {
         .catch(error => console.error(error));
 }
 
-function getMove() {
+function getShot() {
     var gameSelection = document.getElementsByName("noOpponentGame");
     var game = null;
     
