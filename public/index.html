@@ -10,7 +10,7 @@
     <body id="body" onload="setLS()">
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
-        <h1 id="gameTitle">RPS or RPSLS</h1>
+        <h1 class="gameTitle">RPS or RPSLS</h1>
         <div>
             <button class="button" type="button" onclick="helpRPS()">Rules for RPS</button>
             <button class="button" type="button" onclick="helpRPSLS()">Rules for RPSLS</button>
@@ -26,14 +26,14 @@
             <input type="text" id="draw" name="draw" value="" readonly>
         </div>
         <div>
-            <h2>Play Computer</h2>
+            <h2>Play against an opponent</h2>
             <label>Select game: </label>
             <input type="radio" name="game" value="RPS" onchange="setLS()" checked>RPS
             <input type="radio" name="game" value="RPSLS" onchange="setLS()">RPSLS
 
             <br><br>
 
-            <label>Select Shot:</label>
+            <label>Select Move:</label>
             <input type="radio" id="rockOption" name="selectedShot" value="rock" checked>
             <label for="rockOption">Rock</label>
             <input type="radio" id="paperOption" name="selectedShot" value="paper">
@@ -56,9 +56,10 @@
             <input type="text" id="computerShot" name="computerShot" value="" readonly>
 
             <br><br>
-            <button class="button" type="button" onclick="play()">GO!</button>
-            <br><br>
+            <button class="button" type="button" onclick="play()">Let's play!</button>
+            <button class="button" type="button" onclick="reset()">Start Over</button>
+            
         </div>
-        <button class="button" type="button" onclick="reset()">Reset</button>
+        
     </body>
 </html>
