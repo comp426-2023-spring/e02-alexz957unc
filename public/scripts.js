@@ -68,7 +68,7 @@ function rpslsRandom() {
 }
 
 function getMove() {
-    var gameSelection = document.getElementsByName("noOpponentGame");
+    var gameSelection = document.getElementsByName("randomGame");
     var game = null;
     
     for (var i = 0; i < gameSelection.length; i++) {
@@ -94,7 +94,7 @@ function reset() {
     // Reset all selections and clear fields
     var gameSelection = document.getElementsByName("game");
     var drawSelection = document.getElementsByName("selectedMove");
-    var noOpponentGameSelection = document.getElementsByName("noOpponentGame");
+    var randomGameSelection = document.getElementsByName("randomGame");
 
     for(var i=0; i<gameSelection.length; i++) {
         gameSelection[i].checked = false;
@@ -104,8 +104,8 @@ function reset() {
         drawSelection[i].checked = false;
     }
 
-    for (var i=0; i<noOpponentGameSelection.length; i++) {
-        noOpponentGameSelection[i].checked = false;
+    for (var i=0; i<randomGameSelection.length; i++) {
+        randomGameSelection[i].checked = false;
     }
 
     document.getElementById("draw").value = null;
