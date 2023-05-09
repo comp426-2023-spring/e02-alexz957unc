@@ -67,7 +67,7 @@ function rpslsRandom() {
         .catch(error => console.error(error));
 }
 
-function getShot() {
+function getMove() {
     var gameSelection = document.getElementsByName("noOpponentGame");
     var game = null;
     
@@ -93,7 +93,7 @@ function getShot() {
 function reset() {
     // Reset all selections and clear fields
     var gameSelection = document.getElementsByName("game");
-    var drawSelection = document.getElementsByName("selectedShot");
+    var drawSelection = document.getElementsByName("selectedMove");
     var noOpponentGameSelection = document.getElementsByName("noOpponentGame");
 
     for(var i=0; i<gameSelection.length; i++) {
@@ -110,14 +110,14 @@ function reset() {
 
     document.getElementById("draw").value = null;
     document.getElementById("gameResult").value = null;
-    document.getElementById("playerShot").value = null;
-    document.getElementById("computerShot").value = null;
+    document.getElementById("playerMove").value = null;
+    document.getElementById("computerMove").value = null;
     location.reload();
 }
 
 function play() {
     var gameSelection = document.getElementsByName("game");
-    var drawSelection = document.getElementsByName("selectedShot");
+    var drawSelection = document.getElementsByName("selectedMove");
 
     var game = null;
     var move = null;
