@@ -27,8 +27,8 @@ function rulesRPSLS() {
     alert(rpsls_rules);
 }
 
-function rpsOpponent(shot) {
-    const url = "/app/rps/play/" + shot
+function rpsOpponent(move) {
+    const url = "/app/rps/play/" + move
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -37,8 +37,8 @@ function rpsOpponent(shot) {
         .catch(error => console.error(error));
 }
 
-function rpslsOpponent(shot) {
-    const url = "/app/rpsls/play/" + shot
+function rpslsOpponent(move) {
+    const url = "/app/rpsls/play/" + move
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -47,7 +47,7 @@ function rpslsOpponent(shot) {
         .catch(error => console.error(error));
 }
 
-function rpsNoOpponent() {
+function rpsRandom() {
     const url = "/app/rps"
     return response = fetch(url)
         .then(response => response.json())
@@ -57,7 +57,7 @@ function rpsNoOpponent() {
         .catch(error => console.error(error));
 }
 
-function rpslsNoOpponent() {
+function rpslsRandom() {
     const url = "/app/rpsls"
     return response = fetch(url)
         .then(response => response.json())
@@ -80,12 +80,12 @@ function getShot() {
     const isRPS = game=="RPS" ? true : false; 
 
     if (isRPS) {
-        rpsNoOpponent().then(shot => {
-            document.getElementById("draw").value = shot.player;
+        rpsRandom().then(move => {
+            document.getElementById("draw").value = move.player;
         })
     } else {
-        rpslsNoOpponent().then(shot => {
-            document.getElementById("draw").value = shot.player;
+        rpslsRandom().then(move => {
+            document.getElementById("draw").value = move.player;
         })
     }
 }
@@ -120,7 +120,7 @@ function play() {
     var drawSelection = document.getElementsByName("selectedShot");
 
     var game = null;
-    var shot = null;
+    var move = null;
     
     for (var i = 0; i < gameSelection.length; i++) {
     if (gameSelection[i].checked) {
@@ -132,32 +132,32 @@ function play() {
 
     for (var i = 0; i < drawSelection.length; i++) {
         if (drawSelection[i].checked) {
-            shot = drawSelection[i].value;
+            move = drawSelection[i].value;
             break;
         }
     }
 
     var result = null;
-    var playerShot = null;
-    var computerShot = null;
+    var playerMove = null;
+    var computerMove = null;
     if (isRPS) {
-        rpsOpponent(shot).then(someVal => {
+        rpsOpponent(move).then(someVal => {
             result = someVal.result;
-            playerShot = someVal.player;
-            computerShot = someVal.opponent;
+            playerMove = someVal.player;
+            computerMove = someVal.opponent;
             document.getElementById("gameResult").value = result;
-            document.getElementById("playerShot").value = playerShot;
-            document.getElementById("computerShot").value = computerShot;
+            document.getElementById("playerMove").value = playerMove;
+            document.getElementById("computerMove").value = computerMove;
             setResultBackground(result);
         });
     } else {
-        rpslsOpponent(shot).then(someVal => {
+        rpslsOpponent(move).then(someVal => {
             result = someVal.result;
-            playerShot = someVal.player;
-            computerShot = someVal.opponent;
+            playerMove = someVal.player;
+            computerMove = someVal.opponent;
             document.getElementById("gameResult").value = result;
-            document.getElementById("playerShot").value = playerShot;
-            document.getElementById("computerShot").value = computerShot;
+            document.getElementById("playerMove").value = playerMove;
+            document.getElementById("computerMove").value = computerMove;
             setResultBackground(result);
         });
     }
