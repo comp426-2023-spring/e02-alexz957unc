@@ -7,36 +7,29 @@
         <link rel="stylesheet" type="text/css" href="./styles.css">
         <script src="./scripts.js"></script>
     </head>
-    <body id="body" onload="setLS()">
+    <body class="body" onload="setLS()">
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
         <h1 class="gameTitle">RPS or RPSLS</h1>
-        <div>
-            <button class="myButton" type="button" onclick="helpRPS()">Rules for RPS</button>
-            <button class="myButton" type="button" onclick="helpRPSLS()">Rules for RPSLS</button>
-        </div>
         <div class = "container">
            
             <div class="left-section">
                 <h2>Random Draw</h2>
-                <label>Select game: </label>
+            
                 <input type="radio" name="noOpponentGame" value="RPS" checked>RPS
                 <input type="radio" name="noOpponentGame" value="RPSLS">RPSLS
                 <br><br>
-                <button class="myButton" type="button" onclick="getShot()">Get Move</button>
+                <input type="text" class = "output" id = "draw" name="draw" value="" readonly>
                 <br><br>
-                <input type="text" id="draw" name="draw" value="" readonly>
+                <button class="myButton" type="button" onclick="getShot()">Get Move</button>
             </div>
             <div class = "right-section">
                 <h2>Play against an opponent</h2>
-                <label>Select game: </label>
+               
                 <input type="radio" name="game" value="RPS" onchange="setLS()" checked>RPS
                 <input type="radio" name="game" value="RPSLS" onchange="setLS()">RPSLS
     
                 <br><br>
-    
-                <label>Select Move:</label>
-                
                 <input type="radio" id="rockOption" name="selectedShot" value="rock" checked>
                 <label for="rockOption">Rock</label>
                 <input type="radio" id="paperOption" name="selectedShot" value="paper">
@@ -49,14 +42,19 @@
                 <label for="spockOption">Spock</label>
     
                 <br>
-                <h4>Result: </h4>
-                <input type="text" id="gameResult" name="gameResult" value="" readonly>
                 <br>
-                <h4>Your shot: </h4>
-                <input type="text" id="playerShot" name="playerShot" value="" readonly>
-                <br>
-                <h4>Computer's Shot: </h4>
-                <input type="text" id="computerShot" name="computerShot" value="" readonly>
+                <div>
+                    <h3>Your Move: </h3>
+                    <input class = "output" type="text" id="playerShot" name="playerShot" value="" readonly>
+                    <br><br>
+                    <h3>Computer's Move: </h3>
+                    <input class = "output" type="text" id="computerShot" name="computerShot" value="" readonly>
+                    <br><br>
+                    <h3>Result:</h3>
+                    <input class = "output" type="text" id="gameResult" name="gameResult" value="" readonly>
+                    <br>
+                </div>
+                
     
                 <br><br>
                 <button class="myButton" type="button" onclick="play()">Let's play!</button>
@@ -64,7 +62,11 @@
                 
             </div>
         </div>
-        
+        <br>
+        <div>
+            <button class="myButton" type="button" onclick="helpRPS()">Rules for RPS</button>
+            <button class="myButton" type="button" onclick="helpRPSLS()">Rules for RPSLS</button>
+        </div>
         
     </body>
 </html>

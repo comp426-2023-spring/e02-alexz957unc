@@ -165,11 +165,11 @@ function play() {
 
 function setResultBackground(result) {
     if (result == "win") {
-        document.getElementById("gameResult").style.backgroundColor = "rgba(153, 255, 153, 0.5)";
+        document.getElementById("gameResult").style.backgroundColor = "cyan";
     } else if (result == "lose") {
-        document.getElementById("gameResult").style.backgroundColor = "rgba(255, 51, 0, 0.5)";
+        document.getElementById("gameResult").style.backgroundColor = "red";
     } else if (result == "tie") {
-        document.getElementById("gameResult").style.backgroundColor = "rgba(139, 207, 196, 0.5)";
+        document.getElementById("gameResult").style.backgroundColor = "lightgreen";
     }
 }
 
