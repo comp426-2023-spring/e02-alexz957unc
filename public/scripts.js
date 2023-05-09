@@ -90,30 +90,7 @@ function getMove() {
     }
 }
 
-function reset() {
-    // Reset all selections and clear fields
-    var gameSelection = document.getElementsByName("game");
-    var drawSelection = document.getElementsByName("selectedMove");
-    var randomGameSelection = document.getElementsByName("randomGame");
 
-    for(var i=0; i<gameSelection.length; i++) {
-        gameSelection[i].checked = false;
-    }
-
-    for (var i=0; i<drawSelection.length; i++) {
-        drawSelection[i].checked = false;
-    }
-
-    for (var i=0; i<randomGameSelection.length; i++) {
-        randomGameSelection[i].checked = false;
-    }
-
-    document.getElementById("draw").value = null;
-    document.getElementById("gameResult").value = null;
-    document.getElementById("playerMove").value = null;
-    document.getElementById("computerMove").value = null;
-    location.reload();
-}
 
 function play() {
     var gameSelection = document.getElementsByName("game");
@@ -173,8 +150,7 @@ function setResultBackground(result) {
     }
 }
 
-function setLS() {
-    // Enable/Disable lizard and spock radios 
+function enableRPSLS() {
     var gameSelection = document.getElementsByName("game");
     var game = null;
     
@@ -196,4 +172,28 @@ function setLS() {
         spockOption.checked = false;
         rockOption.checked = true;
     }
+}
+
+function reset() {
+    var gameSelection = document.getElementsByName("game");
+    var drawSelection = document.getElementsByName("selectedMove");
+    var randomGameSelection = document.getElementsByName("randomGame");
+
+    for(var i=0; i<gameSelection.length; i++) {
+        gameSelection[i].checked = false;
+    }
+
+    for (var i=0; i<drawSelection.length; i++) {
+        drawSelection[i].checked = false;
+    }
+
+    for (var i=0; i<randomGameSelection.length; i++) {
+        randomGameSelection[i].checked = false;
+    }
+
+    document.getElementById("draw").value = null;
+    document.getElementById("gameResult").value = null;
+    document.getElementById("playerMove").value = null;
+    document.getElementById("computerMove").value = null;
+    location.reload();
 }

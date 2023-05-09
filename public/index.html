@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="./styles.css">
         <script src="./scripts.js"></script>
     </head>
-    <body class="body" onload="setLS()">
+    <body class="body" onload="enableRPSLS()">
     <!-- Your interface markup goes here -->
     <!-- For interface examples, look in the `/examples/` directory in the root of your starter code repo. -->
         <h1 class="title">RPS or RPSLS</h1>
@@ -23,8 +23,8 @@
             </div>
             <div class="right-section">
                 <h2>Play against an opponent</h2>
-                <input type="radio" name="game" value="RPS" onchange="setLS()" checked>RPS
-                <input type="radio" name="game" value="RPSLS" onchange="setLS()">RPSLS
+                <input type="radio" name="game" value="RPS" onchange="enableRPSLS()" checked>RPS
+                <input type="radio" name="game" value="RPSLS" onchange="enableRPSLS()">RPSLS
                 <br><br>
                 <input type="radio" id="rockOption" name="selectedMove" value="rock" checked>
                 <label for="rockOption">Rock</label>
