@@ -124,7 +124,7 @@ function play() {
             result = someVal.result;
             playerMove = someVal.player;
             computerMove = someVal.opponent;
-            document.getElementById("gameResult").value = result;
+            document.getElementById("result").value = result;
             document.getElementById("playerMove").value = playerMove;
             document.getElementById("computerMove").value = computerMove;
             newBackground(result);
@@ -134,7 +134,7 @@ function play() {
             result = someVal.result;
             playerMove = someVal.player;
             computerMove = someVal.opponent;
-            document.getElementById("gameResult").value = result;
+            document.getElementById("result").value = result;
             document.getElementById("playerMove").value = playerMove;
             document.getElementById("computerMove").value = computerMove;
             newBackground(result);
@@ -144,11 +144,11 @@ function play() {
 
 function newBackground(result) {
     if (result == "win") {
-        document.getElementById("gameResult").style.backgroundColor = "cyan";
+        document.getElementById("result").style.backgroundColor = "cyan";
     } else if (result == "lose") {
-        document.getElementById("gameResult").style.backgroundColor = "red";
+        document.getElementById("result").style.backgroundColor = "red";
     } else if (result == "tie") {
-        document.getElementById("gameResult").style.backgroundColor = "lightgreen";
+        document.getElementById("result").style.backgroundColor = "lightgreen";
     }
 }
 
@@ -194,7 +194,7 @@ function reset() {
     }
 
     document.getElementById("draw").value = null;
-    document.getElementById("gameResult").value = null;
+    document.getElementById("result").value = null;
     document.getElementById("playerMove").value = null;
     document.getElementById("computerMove").value = null;
     location.reload();
