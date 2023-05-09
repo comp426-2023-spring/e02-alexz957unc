@@ -2,12 +2,12 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-const rps_rules_text = `Rules for Rock Paper Scissors:
+const rps_rules = `Rules for Rock Paper Scissors:
   - Scissors CUTS Paper
   - Paper COVERS Rock
   - Rock CRUSHES Scissors`
 
-const rpsls_rules_text = `Rules for Rock Paper Scissors Lizard Spock:
+const rpsls_rules = `Rules for Rock Paper Scissors Lizard Spock:
   - Scissors CUTS Paper
   - Paper COVERS Rock
   - Rock SMOOSHES Lizard
@@ -19,12 +19,12 @@ const rpsls_rules_text = `Rules for Rock Paper Scissors Lizard Spock:
   - Spock VAPORIZES Rock
   - Rock CRUSHES Scissors`
 
-function helpRPS() {
-    alert(rps_rules_text);
+function rulesRPS() {
+    alert(rps_rules);
 }
 
-function helpRPSLS() {
-    alert(rpsls_rules_text);
+function rulesRPSLS() {
+    alert(rpsls_rules);
 }
 
 function rpsOpponent(shot) {
