@@ -27,6 +27,26 @@ function rulesRPSLS() {
     alert(rpsls_rules);
 }
 
+function rpsRandom() {
+    const url = "/app/rps"
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
+}
+
+function rpslsRandom() {
+    const url = "/app/rpsls"
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
+}
+
 function rpsOpponent(move) {
     const url = "/app/rps/play/" + move
     return response = fetch(url)
@@ -47,25 +67,7 @@ function rpslsOpponent(move) {
         .catch(error => console.error(error));
 }
 
-function rpsRandom() {
-    const url = "/app/rps"
-    return response = fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-        .catch(error => console.error(error));
-}
 
-function rpslsRandom() {
-    const url = "/app/rpsls"
-    return response = fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            return data;
-        })
-        .catch(error => console.error(error));
-}
 
 function getMove() {
     var gameSelection = document.getElementsByName("randomGame");
@@ -125,7 +127,7 @@ function play() {
             document.getElementById("gameResult").value = result;
             document.getElementById("playerMove").value = playerMove;
             document.getElementById("computerMove").value = computerMove;
-            setResultBackground(result);
+            newBackground(result);
         });
     } else {
         rpslsOpponent(move).then(someVal => {
@@ -135,12 +137,12 @@ function play() {
             document.getElementById("gameResult").value = result;
             document.getElementById("playerMove").value = playerMove;
             document.getElementById("computerMove").value = computerMove;
-            setResultBackground(result);
+            newBackground(result);
         });
     }
 }
 
-function setResultBackground(result) {
+function newBackground(result) {
     if (result == "win") {
         document.getElementById("gameResult").style.backgroundColor = "cyan";
     } else if (result == "lose") {
